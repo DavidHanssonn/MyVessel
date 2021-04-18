@@ -1,0 +1,132 @@
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  overflow: hidden;
+  background: #191a1a;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+
+  .search-container {
+    position: relative;
+
+    input {
+      width: 500px;
+      border-radius: 60px;
+      border: none;
+      background: #343332;
+      color: #fff;
+      padding: 20px;
+      font-size: 20px;
+      display: block;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      margin: 6px 12px;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      border: none;
+      background: #191a1a;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      img {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .warning {
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: fixed;
+  bottom: -5%;
+  left: 0;
+  background: #015871;
+}
+
+.wave {
+  background: url("/components/icon/wave.svg") repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+
+// Media query phone
+
+@media screen and (max-width: 600px) {
+ 
+  .container{
+    width:100%;
+    padding:10px;
+    .search-container input{
+      width:100%;
+    }
+
+  }
+
+
+}
