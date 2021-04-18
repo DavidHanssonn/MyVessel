@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link , useLocation} from "react-router-dom";
-import mapboxgl from "mapbox-gl";
+//import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import './vessel.scss'
 import VesselInfo from "./vesselinfo";
 import Vesselspeed from "./vesselspeed";
 import logo from '../icon/Group.svg';
+import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+
 
 const styles : React.CSSProperties= {
   width: "100vw",
@@ -30,6 +32,8 @@ const VesselMap = () => {
 
     useEffect(() => {
     mapboxgl.accessToken = REACT_APP_SECRETAPIMAP;
+    // eslint-disable-next-line import/no-webpack-loader-syntax
+    mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
     const initializeMap = ({ setMap, mapContainer } : any) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
