@@ -175,8 +175,13 @@
   .vesselcontainer{
     transition: opacity .13s ease-in-out;
   }
+
+  //Effects and animation
   .vesselInfo.fullwidth{
     width:100% !important;
+  }
+  .vesselcontainer.hide{
+    opacity: 0;
   }
 
   //Buttons/

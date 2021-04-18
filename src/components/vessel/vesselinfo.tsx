@@ -24,7 +24,7 @@ const VesselInfo : FC<IVessel> = (props : IVessel) => {
 return(
     <div>
     <div className={`vesselInfo ${showMenu ? 'fullwidth' : ''}`}>
-      <div className="vesselcontainer" >
+      <div className={`vesselcontainer ${showMenu ? '' : 'hide'}`}>
     <h3>{props.name}</h3>
       <ul>
         <li><label>Last Update:</label> {props.date}</li>
