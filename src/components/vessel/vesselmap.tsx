@@ -99,7 +99,6 @@ const VesselMap = () => {
     heading={vesseldata.heading}
     />
 
-
   <div ref={el => (mapContainer.current = el)} style={styles} />
   </div>
   );
