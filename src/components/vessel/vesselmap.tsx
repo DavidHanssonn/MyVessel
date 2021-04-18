@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, FC} from "react";
 import { Link , useLocation} from "react-router-dom";
 //import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -15,7 +15,7 @@ const styles : React.CSSProperties= {
   position: "absolute"
 };
 
-const VesselMap = () => {
+const VesselMap : FC = () => {
  
   const { state } = useLocation();
   let vesseldata = state.vesseldata[0].entries[0];
